@@ -5,6 +5,7 @@ function trocou(id) {
 function formataJson( o ) {
     return "(" + o.RA + ") "+o.nome + " cargo: "+o.funcao.cargo
 }
+/*Aqui eu criei uma função com o inutuito de mostrar os usuarios, utilizando var e for*/
 function mostraTodos(usuario) {
     var detalhe = document.getElementById("detalhe");
     detalhe.innerHTML = "";
@@ -19,27 +20,8 @@ function mostraTodos(usuario) {
       detalhe.appendChild(divTodo);
     }
   }
-  function mostraUsuarios() {
-    var detalhe = document.getElementById("detalhe");
-    detalhe.innerHTML = "";
-  
-    for (var i = 0; i < usuarios.length; i++) {
-      var usuario = usuarios[i];
-      var divUsuario = document.createElement("div");
-      divUsuario.innerHTML = "<h2>" + usuario.nome + "</h2>";
-      detalhe.appendChild(divUsuario);
-  
-      for (var j = 0; j < usuario.todos.length; j++) {
-        var todo = usuario.todos[j];
-        var divTodo = document.createElement("div");
-        divTodo.innerHTML = "<h3>" + todo.titulo + "</h3>";
-        divTodo.innerHTML += "<p>" + todo.descricao + "</p>";
-        divTodo.innerHTML += "<p>Prioridade: " + todo.prioridade + "</p>";
-        divTodo.innerHTML += "<p>Concluído: " + (todo.concluido ? "Sim" : "Não") + "</p>";
-        detalhe.appendChild(divTodo);
-      }
-    }
-  }
+/*Nessa parte eu criei outra função para trocar o codigo*/
+
   function trocou(codigo) {
     var usuario = usuarios.find(u => u.codigo == codigo);
     if (usuario) {
